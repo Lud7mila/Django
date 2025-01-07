@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/stylesheet.css'%}" type="text/css">
+
+    {% block title %}
+    {% endblock %}
+
+    {% block additional_styles %}
+    {% endblock %}
+</head>
+
+<body>
+    {% block page-title %}
+    {% endblock %}
+
+    <div align="center">
+        <a href="/cookbook/">На главную</a> | <a href="/cookbook/content/">Перейти к рецептам</a> | <a href="/registration/">Регистрация</a> | <a href="/cookbook/about/">Пара слов об авторе</a>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

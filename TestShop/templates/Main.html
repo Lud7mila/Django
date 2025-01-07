@@ -1,0 +1,17 @@
+{% extends 'menu.html' %}
+
+{% block title %}<title>{{page_name}}</title>{% endblock %}
+
+{% block additional_styles %}
+	<style>
+		body {background:url(/static/images/Sunset3.jpg) no-repeat center fixed;}
+  	</style>
+{% endblock %}
+
+{% block page-title %}
+    <p class="page-title">{{page_name}}</p>
+{% endblock %}
+
+{% block content %}
+	<p align="center"><img width="50%" src='/static/images/Cafe.jpg' alt="My image"></p>
+{% endblock %}
