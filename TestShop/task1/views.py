@@ -51,7 +51,7 @@ def registration(request):
             info = __is_data_form_valid(username, password, repeat_password, age, users)
 
             if not info:
-                User.objects.create(name=username, password=password, age=age)
+                User.objects.create(name=username, balance=200, age=age)
                 context['registered'] = True
                 return render(request, "registration.html", context)
         else:

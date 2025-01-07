@@ -3,7 +3,7 @@ from django.db import models
 
 class User(models.Model):
     name = models.CharField(max_length=100)  # имя пользователя
-    password = models.CharField(max_length=30)  # пароль
+    balance = models.DecimalField(max_digits=10, decimal_places=2)  # баланс
     age = models.IntegerField()  # возраст
 
     def __str__(self):
