@@ -1,6 +1,10 @@
+from http.client import HTTPResponse
+from lib2to3.fixes.fix_input import context
+
 from django.shortcuts import render
 from .forms import UserRegister
 from .models import *
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def get_cookbook(request):
     context = {"page_name": "Кулинарная книга"}
@@ -60,3 +64,19 @@ def registration(request):
     context['info'] = info
     context['form'] = form
     return render(request, "registration.html", context)
+
+
+def news(request):
+    new = New.objects.all().order_by('date')
+    paginator = Paginator(new, 2)
+    page_number = request.GET.get('page')
+    try:
+        page_news = paginator.page(page_number)
+    except PageNotAnInteger:  # указанный параметр page не является целым числом, обращаемся к первой странице
+        page_news = paginator.page(1)
+    except EmptyPage:
+        page_news = paginator.page(paginator.num_pages)
+
+    context = {"page_name": "Новости",
+               "page_news": page_news}
+    return render(request, "news.html", context)

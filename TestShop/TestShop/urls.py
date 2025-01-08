@@ -25,4 +25,5 @@ urlpatterns = [
     path("cookbook/content/", get_recipes),
     path("cookbook/about/", get_info_about),
     path("registration/", registration),
+    path('cookbook/news/', news)
 ]
