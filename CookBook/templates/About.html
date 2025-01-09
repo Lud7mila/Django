@@ -1,0 +1,21 @@
+{% extends 'menu.html' %}
+
+{% block title %}<title>{{page_name}}</title>{% endblock %}
+
+{% block additional_styles %}
+	<style>
+		body {background:url(/static/images/PinkBubble2.jpg) no-repeat center fixed;}
+  	</style>
+{% endblock %}
+
+{% block page-title %}
+        <p class="page-title">{{page_name}}</p>
+{% endblock %}
+
+{% block content %}
+	<p>Данная книга создана мной: Людмилой Кучиной.</p>
+	<p>Я люблю готовить необычные блюда!</p>
+	<p>Часто я придумываю их сама, и есть огромная потребность сохранять эти рецепты. Иначе я их забываю.</p>
+	<p><img width="70%" src='/static/images/Cake.jpg' alt="My image"></p>
+	<button class="button-back" onclick="location.href = '/cookbook/'">Вернуться обратно</button>
+{% endblock %}
